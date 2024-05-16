@@ -22,3 +22,23 @@ image_data_test = ImageFolder("./fruits-360/Validation",transform=transforms_tra
 # Shuffling data and then collecting all the labels.
 random.shuffle(image_data_train.samples)
 random.shuffle(image_data_test.samples)
+
+# Total classes
+classes_idx = image_data_train.class_to_idx
+classes = len(image_data_train.classes)
+len_train_data = len(image_data_train)
+len_test_data = len(image_data_test)
+
+
+def get_labels():
+    labels_train = [] # All the labels
+    labels_test = []
+    for i in image_data_train.imgs:
+        labels_train.append(i[1])
+    
+    for j in image_data_test.imgs:
+        labels_test.append(j[1])
+    
+    return (labels_train, labels_test)
+
+labels_train, labels_test = get_labels()
