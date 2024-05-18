@@ -43,5 +43,3 @@ def get_labels():
 
 labels_train, labels_test = get_labels()
 
-
-
