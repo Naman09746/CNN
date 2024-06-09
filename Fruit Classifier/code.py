@@ -112,3 +112,10 @@ def test():
             print ("loss: ", loss.item())
 
 
+loaded_state_dict = torch.load("model-state-dict.pth",map_location="cpu")
+
+model.load_state_dict(loaded_state_dict)
+
+for name in model.named_parameters():
+    print (name)
+
